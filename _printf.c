@@ -31,10 +31,6 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i] == '%' && format[i + 1] == '\0')
-			{
-				return (0);
-			}
 			t = 0;
 			for (j = 0; j < 5; j++) /*navigate in the struc*/
 			{
