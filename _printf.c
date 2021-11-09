@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 		{
 			if (type[j].t == format[i + 1])
 			{
-				(type[j].f(args));
+				count += (type[j].f(args));
 			}
 		}
 		i++;
