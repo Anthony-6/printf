@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		{'d', print_d_i},
 		{'i', print_d_i}
 	};
-	int count, i, j;
+	int count, i, j, t;
 	va_list args;
 
 	if (format == NULL)
@@ -35,14 +35,20 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count += 1;
 			}
-		for (j = 0; j < 4; j++) /*navigate in the struc*/
-		{
-			if (type[j].t == format[i + 1])
+			t = 0;
+			for (j = 0; j < 4; j++) /*navigate in the struc*/
 			{
-				count += (type[j].f(args));
+				if (type[j].t == format[i + 1])
+				{
+					count += (type[j].f(args));
+					t = 1;
+				}
 			}
-		}
-		i++;
+			if (t == 0)
+			{
+				_putchar('%');
+			}
+			i++;
 		}
 	}
 	va_end(args);
