@@ -31,7 +31,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			if (format[i + 1] == '%')
+			{
 				_putchar('%');
+				count += 1;
+			}
 		for (j = 0; j < 4; j++) /*navigate in the struc*/
 		{
 			if (type[j].t == format[i + 1])

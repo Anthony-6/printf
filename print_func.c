@@ -22,19 +22,24 @@ int print_c(va_list args)
 int print_str(va_list args)
 {
 	char *m;
-	int i, n;
+	int i, n, count = 0;
 	char *str = va_arg(args, char *);
 	m = ("(null)");
 	if (str != NULL)
 	{
 		for (i = 0; str[i] != '\0'; i++)
+		{
 			_putchar(str[i]);
+			count++;
+		}
 	}
-		else
-		if (str == NULL)
+	else if (str == NULL)
 		for (n = 0; m[n] != '\0'; n++)
-		_putchar(m[n]);
-	return (i);
+		{
+			_putchar(m[n]);
+			count++;
+		}
+	return (count);
 }
 /**
  * print_d_i - prints an integer
