@@ -24,6 +24,7 @@ int print_str(va_list args)
 	char *m;
 	int i, n, count = 0;
 	char *str = va_arg(args, char *);
+
 	m = ("(null)");
 	if (str != NULL)
 	{
