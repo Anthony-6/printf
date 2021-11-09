@@ -19,5 +19,13 @@ _printf("testeuh %s\n", k);
 printf("testeuh %s\n", k);
 _printf("testarrr %c\n", l);
 printf("testarrr %c\n", l);
+_printf(NULL);
+printf(NULL);
+_printf(NULL, k);
+printf(NULL, k);
+_printf(NULL, l);
+printf(NULL, l);
+_printf("%%");
+printf("%%");
     return (0);
 }
