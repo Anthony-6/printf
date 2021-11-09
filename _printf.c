@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	printf_t type[] = {
 		{'c', print_c},
 		{'s', print_str},
+		{'%', print_percent},
 		{'d', print_d_i},
 		{'i', print_d_i}
 	};
@@ -30,25 +31,18 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				count += 1;
-			}
 			t = 0;
-			for (j = 0; j < 4; j++) /*navigate in the struc*/
+			for (j = 0; j < 5; j++) /*navigate in the struc*/
 			{
 				if (type[j].t == format[i + 1])
 				{
 					count += (type[j].f(args));
 					t = 1;
+					i++;
 				}
 			}
 			if (t == 0)
-			{
 				_putchar('%');
-			}
-			i++;
 		}
 	}
 	va_end(args);

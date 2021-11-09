@@ -13,6 +13,7 @@ int print_c(va_list args)
 	_putchar(e);
 	return (1);
 }
+
 /**
  * print_str - prints a string
  * @args: string to print
@@ -42,6 +43,20 @@ int print_str(va_list args)
 		}
 	return (count);
 }
+
+/**
+ * print_percent - prints a string
+ * @args:  to print
+ * Return: number of characters
+ */
+
+int print_percent(va_list args)
+{
+	(void) args;
+	_putchar('%');
+	return (1);
+}
+
 /**
  * print_d_i - prints an integer
  * @args: integer to print
