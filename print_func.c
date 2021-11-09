@@ -21,9 +21,8 @@ int print_c(va_list args)
 
 int print_str(va_list args)
 {
-	int n; 
 	char *m;
-	int i = 0;
+	int i, n;
 	char *str = va_arg(args, char *);
 	m = ("(null)");
 	if (str != NULL)
@@ -31,7 +30,7 @@ int print_str(va_list args)
 		for (i = 0; str[i] != '\0'; i++)
 			_putchar(str[i]);
 	}
-		else 
+		else
 		if (str == NULL)
 		for (n = 0; m[n] != '\0'; n++)
 		_putchar(m[n]);
