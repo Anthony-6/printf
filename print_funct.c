@@ -8,9 +8,9 @@
 
 int print_c(va_list args)
 {
-	char e = (char)va_arg(args, int);
+	char c = (char)va_arg(args, int);
 
-	_putchar(e);
+	_putchar(c);
 	return (1);
 }
 /**
@@ -21,13 +21,48 @@ int print_c(va_list args)
 
 int print_str(va_list args)
 {
-	int i = 0;
+	int i, n;
+	char *m;
 	char *str = va_arg(args, char *);
 
-	if (str != NULL)
+	m =("(null)");
+	if (str == NULL)
+	{
+		for (n = 0; m[n] != '\0'; n++)
+			_putchar(m[n]);
+	}
+	else
 	{
 		for (i = 0; str[i] != '\0'; i++)
 			_putchar(str[i]);
 	}
 	return (i);
+}
+
+/**
+ * print_d_i - prints an integer
+ * @args: integer to print
+ * Return: number of characters
+ */
+
+int print_d_i(va_list args)
+{
+	int i = va_arg(args, int), div = 1, count = 0;
+
+	if (i < 0)
+	{
+		_putchar('-');
+		i *= -1;
+		count += 1;
+	}
+	while (i / (div * 10) >= 1)
+		div *= 10;
+	while (div >= 1)
+	{
+		_putchar((i / div) + '0');
+		i = i % div;
+		div /= 10;
+		count++;
+	}
+	return (count);
 }
