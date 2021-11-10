@@ -16,5 +16,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_c(va_list args);
 int print_str(va_list args);
+int print_percent(va_list args);
 int print_d_i(va_list args);
 #endif
