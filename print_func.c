@@ -104,7 +104,7 @@ int print_b(va_list args)
 		e *= -1;
 	}
 	c = e;
-	s = malloc(sizeof(char) * 32);
+	s = malloc(32);
 	for (i = 0; c > 0; i++)
 	{
 		if (c % 2 == 0)
