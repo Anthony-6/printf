@@ -44,7 +44,10 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (t == 0)
+			{
 				_putchar('%');
+				count += 1;
+			}
 		}
 	}
 	va_end(args);
