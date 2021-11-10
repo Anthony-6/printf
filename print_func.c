@@ -85,3 +85,32 @@ int print_d_i(va_list args)
 	}
 	return (count);
 }
+
+/**
+ * print_b - print binary code from an unsigned integer
+ * @args: integer to convert to binary and print
+ * Return: number of characters
+ */
+
+int print_b(va_list args)
+{
+	int c = va_arg(args, int), count = 0, i;
+	char *s;
+
+	s = malloc(sizeof(int) * 7);
+	for (i = 0; c > 0; i++)
+	{
+		if (c % 2 == 0)
+			s[i] = 0;
+		if (c % 2 == 1)
+			s[i] = 1;
+		c /= 2;
+	}
+	while (i >= 0)
+	{
+		count += _putchar(s[i]);
+		i--;
+	}
+	free(s);
+	return (count);
+}
