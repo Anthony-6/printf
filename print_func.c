@@ -65,14 +65,17 @@ int print_percent(va_list args)
 
 int print_d_i(va_list args)
 {
-	int i = va_arg(args, int), div = 1, count = 0;
+	long int j = va_arg(args, int), div = 1;
+	int count = 0;
+	unsigned int i;
 
-	if (i < 0)
+	if (j < 0)
 	{
 		count += _putchar('-');
-		i *= -1;
+		j *= -1;
 	}
-	while (i / (div * 10) >= 1)/*get bigest divider(multiple of 10) of i*/
+	i = j;
+	while (i / (div * 10) >= 1) /*get bigest divider(multiple of 10) of i*/
 		div *= 10;
 	while (div >= 1)
 	{
