@@ -94,11 +94,17 @@ int print_d_i(va_list args)
 
 int print_b(va_list args)
 {
-	unsigned int c = va_arg(args, int);
-	int count = 0, i;
+	int e = va_arg(args, int), count = 0, i;
+	unsigned int c;
 	char *s;
 
-	s = malloc(sizeof(char) * 7);
+	if (e < 0)
+	{
+		count += _putchar('-');
+		e *= -1;
+	}
+	c = e;
+	s = malloc(sizeof(char) * 32);
 	for (i = 0; c > 0; i++)
 	{
 		if (c % 2 == 0)
