@@ -69,18 +69,16 @@ int print_d_i(va_list args)
 
 	if (i < 0)
 	{
-		_putchar('-');
+		count += _putchar('-');
 		i *= -1;
-		count += 1;
 	}
-	while (i / (div * 10) >= 1)
+	while (i / (div * 10) >= 1)/*get bigest divider(multiple of 10) of i*/
 		div *= 10;
 	while (div >= 1)
 	{
-		_putchar((i / div) + '0');
-		i = i % div;
+		count += _putchar((i / div) + '0'); /*print first figure of i*/
+		i = i % div;  /*i become the rest of the divison*/
 		div /= 10;
-		count++;
 	}
 	return (count);
 }

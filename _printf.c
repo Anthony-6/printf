@@ -9,14 +9,9 @@
 
 int _printf(const char *format, ...)
 {
-	printf_t type[] = {
-		{'c', print_c},
-		{'s', print_str},
-		{'%', print_percent},
-		{'d', print_d_i},
-		{'i', print_d_i}
-	};
-	int count = 0, i, j, t;
+printf_t type[] = {{'c', print_c}, {'s', print_str}, {'%', print_percent},
+		   {'d', print_d_i}, {'i', print_d_i}};
+int count = 0, i, j, t = 0;
 	va_list args;
 
 	if (format == NULL)
@@ -26,12 +21,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
-		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			count++;
-		}
-		else
+		else if (format[i] != '%')
+			count += _putchar(format[i]);
+		else if (format[i] == '%')
 		{
 			t = 0;
 			for (j = 0; j < 5; j++) /*navigate in the struc*/
@@ -41,13 +33,11 @@ int _printf(const char *format, ...)
 					count += (type[j].f(args));
 					t = 1;
 					i++;
+					break;
 				}
 			}
 			if (t == 0)
-			{
-				_putchar('%');
-				count += 1;
-			}
+				count += _putchar('%');
 		}
 	}
 	va_end(args);
