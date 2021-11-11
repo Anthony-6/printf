@@ -1,6 +1,9 @@
 #ifndef PRINTF_H
 #define PRINTF_H
 #include <stddef.h>
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
 #include <stdarg.h>
 /**
  * struct printf_t - print type with corresponding print function
@@ -15,7 +18,10 @@ typedef struct printf_t
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_c(va_list args);
-int print_str(va_list args);
+int print_s(va_list args);
 int print_percent(va_list args);
 int print_d_i(va_list args);
+int print_b(va_list args);
+int print_r(va_list args);
+int print_rot13(va_list args);
 #endif
