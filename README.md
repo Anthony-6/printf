@@ -69,6 +69,6 @@ For the compilation of our file, we use this command **gcc -Wall -Werror -Wextra
 | %d            | print a decimal    |
 | %r            | print a reversed string    |
 | %R            | convert string into rot13    |
-| %r            | convert string into binary    |
+| %b           | convert string into binary    |
 
 ###### made by  [Anthony Lacoste](https://www.linkedin.com/in/anthony-lacoste-8b30b7222/) and [Ivan Mickisz](https://www.linkedin.com/in/ivan-mickisz-550222222/).
