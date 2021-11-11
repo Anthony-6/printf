@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-printf_t type[] = {{'c', print_c}, {'s', print_str}, {'%', print_percent},
+printf_t type[] = {{'c', print_c}, {'s', print_s}, {'%', print_percent},
 		   {'d', print_d_i}, {'i', print_d_i}, {'b', print_b}};
 int count = 0, i, j, t = 0;
 	va_list args;

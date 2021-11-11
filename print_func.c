@@ -20,27 +20,15 @@ int print_c(va_list args)
  * Return: number of characters
  */
 
-int print_str(va_list args)
+int print_s(va_list args)
 {
-	char *m;
-	int i, n, count = 0;
+	int i, count = 0;
 	char *str = va_arg(args, char *);
 
-	m = ("(null)");
-	if (str != NULL)
-	{
-		for (i = 0; str[i] != '\0'; i++)
-		{
-			_putchar(str[i]);
-			count++;
-		}
-	}
-	else if (str == NULL)
-		for (n = 0; m[n] != '\0'; n++)
-		{
-			_putchar(m[n]);
-			count++;
-		}
+	if (str == NULL)
+		str = "(null)"
+	for (i = 0; str[i] != '\0'; i++)
+		count+= _putchar(str[i]);
 	return (count);
 }
 
@@ -86,37 +74,3 @@ int print_d_i(va_list args)
 	return (count);
 }
 
-/**
- * print_b - print binary code from an unsigned integer
- * @args: integer to convert to binary and print
- * Return: number of characters
- */
-
-int print_b(va_list args)
-{
-	unsigned int c = va_arg(args, unsigned int);
-	int count = 0, i = 0;
-	char *s;
-
-	s = malloc(32);
-	if (c == 0)
-	{
-		count += _putchar(s[++i] = '0');
-	}
-	for (i = 0; c > 0; i++)
-	{
-		if (c % 2 == 0)
-			s[i] = '0';
-		else if (c % 2 == 1)
-			s[i] = '1';
-		c /= 2;
-	}
-	s[i] = '\0';
-	while (i >= 0)
-	{
-		count += _putchar(s[i]);
-		i--;
-	}
-	free(s);
-	return (count);
-}
