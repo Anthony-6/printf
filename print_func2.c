@@ -14,22 +14,18 @@ int print_rot13(va_list args)
 	char *s = va_arg(args, char *);
 
 	if (s == NULL)
-		_printf("(NULL)");
+		s = "(NULL)";
 	while (s[i])
 	{
 		for (j = 0; j < 52; j++)
 		{
 			if (s[i] == a[j])
-			{
-				count += _putchar(b[j]);
 				break;
-			}
-			else
-			{
-				count += _putchar(s[i]);
-				break;
-			}
 		}
+		if (s[i] == a[j])
+			count += _putchar(b[j]);
+		else
+			count += _putchar(s[i]);
 		i++;
 	}
 	return (count);
