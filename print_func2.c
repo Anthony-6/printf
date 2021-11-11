@@ -20,11 +20,16 @@ int print_rot13(va_list arg)
 		for (j = 0; j < 52; j++)
 		{
 			if (s[i] == a[j])
+			{
 				count += _putchar(b[j]);
-			break;
+				break;
+			}
+			else
+			{
+				count += _putchar(s[i]);
+				break;
+			}
 		}
-	        if (s[i] != a[j])
-			count += _putchar(s[i]);
 		i++;
 	}
 	return (count);
