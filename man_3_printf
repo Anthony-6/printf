@@ -1,0 +1,39 @@
+.TH _printf 1 "11 November 2021 "1.0" "_printf man page"
+.SH NAME
+_printf
+.SH DESCRIPTION
+_printf is a function that permit to the user to print formated value.
+
+.SH FUNCTION
+.B %s -> print a string
+
+.B %c -> print a character
+
+.B %% -> print a single percent
+
+.B %d -> print a decimal number
+
+.B %i -> print a integer
+
+.B %r -> print a reversed string
+
+.B %R -> convert a string into ROT13
+
+.B %b -> convert string into binary
+.SH SYNTAX
+
+To use this function you need to write like this : _printf("text") and it will print your text.
+
+If you want to use other function you need to create variable, like int or char, depend on wich one you want to use.
+
+When you have chosen you're variable, you can write the function like this:
+
+
+.B _printf("my text %i", int)  
+ and it will print "my text" with the integer you created right after.
+ 
+.SH OPTION
+_printf doesn't take any option
+.SH AUTHOR
+
+Anthony Lacoste and Ivan Mickisz
