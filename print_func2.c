@@ -11,7 +11,7 @@ int print_rot13(va_list args)
 	int i = 0, j, count = 0;
 	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char *s = va_arg(arg, char *);
+	char *s = va_arg(args, char *);
 
 	if (s == NULL)
 		s = "(null)";
