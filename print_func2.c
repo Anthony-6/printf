@@ -14,7 +14,7 @@ int print_rot13(va_list args)
 	char *s = va_arg(args, char *);
 
 	if (s == NULL)
-		s = "(NULL)";
+		print_s("(NULL)");
 	while (s[i])
 	{
 		for (j = 0; j < 52; j++)
