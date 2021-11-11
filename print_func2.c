@@ -1,34 +1,31 @@
 #include "main.h"
 
 /**
- * print_b - print binary code from an unsigned integer
- * @args: integer to convert to binary and print
- * Return: number of characters
+ * print_rot13 - Prints a string in rot13
+ * @arg: string to print
+ * Return: number of character
  */
 
-int print_b(va_list args)
+int print_rot13(va_list arg)
 {
-	unsigned int c = va_arg(args, unsigned int);
-	int count = 0, i = 0;
-	unsigned int tab[31];
+	int i = 0, j, count = 0;
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *s = va_arg(arg, char *);
 
-	if (!c)
+	if (s == NULL)
+		s = "(null)";
+	while (s[i])
 	{
-		count += _putchar('0');
-	}
-	else
-	{
-		for (i = 0; c > 0; i++)
+		for (j = 0; j < 52; j++)
 		{
-			tab[i] = (c % 2);
-			c /= 2;
+			if (s[i] == a[j])
+				count += _putchar(b[j]);
+			break;
 		}
-		i--;
-		while (i >= 0)
-		{
-			count += _putchar(tab[i] + '0');
-			i--;
-		}
+	        if (s[i] != a[j])
+			count += _putchar(s[i]);
+		i++;
 	}
 	return (count);
 }

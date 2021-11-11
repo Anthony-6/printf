@@ -10,7 +10,8 @@
 int _printf(const char *format, ...)
 {
 printf_t type[] = {{'c', print_c}, {'s', print_s}, {'%', print_percent},
-		   {'d', print_d_i}, {'i', print_d_i}, {'b', print_b}};
+		   {'d', print_d_i}, {'i', print_d_i}, {'b', print_b},
+		   {'R', print_rot13}};
 int count = 0, i, j, t = 0;
 	va_list args;
 
@@ -26,7 +27,7 @@ int count = 0, i, j, t = 0;
 		else if (format[i] == '%')
 		{
 			t = 0;
-			for (j = 0; j < 6; j++) /*navigate in the struc*/
+			for (j = 0; j < 7; j++) /*navigate in the struc*/
 			{
 				if (type[j].t == format[i + 1])
 				{
