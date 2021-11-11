@@ -1,7 +1,28 @@
 #include "main.h"
 
 /**
- * print_rot13 - Prints a string in rot13
+ * print_r - print a string in reverse
+ * @args: string to print in reverse
+ * Return: number of characters
+ */
+
+int print_r(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int i = 0, count = 0;
+
+	if (str == NULL)
+		str = "(null)";
+	while (str[i])
+		i++;
+	i--;
+	for (; i >= 0; i--)
+		count += _putchar(str[i]);
+	return (count);
+}
+
+/**
+ * print_rot13 - prints a string in rot13
  * @args: string to print
  * Return: number of character
  */
