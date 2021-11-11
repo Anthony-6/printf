@@ -26,7 +26,7 @@ int print_s(va_list args)
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
-		str = "(null)"
+		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
 		count+= _putchar(str[i]);
 	return (count);
